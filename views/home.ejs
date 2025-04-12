@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .box {
+        width: 80%;
+        height: 200px;
+        border-radius: 20px;
+        background: pink;
+        text-align: center;
+
+
+    }
+</style>
+
+<body>
+    <h1>This is Home Page</h1>
+    <div class="container">
+        <% for(let item of data){ %>
+            <div class="box">
+                <h2>
+                    <%=item.name%>
+                </h2>
+                <h2>
+                    <%=item.role%>
+                </h2>
+                <p>
+                    <%=item.id%>
+                </p>
+
+                <form method="get" action="/show/<%=item.id%>"><button>See More</button></form> &nbsp; &nbsp; <form
+                    method="get" action="/post/<%=item.id%>/edit"> <button>Edit</button></form> &nbsp;&nbsp; <form
+                    method="POST" action="/post/<%=item.id%>?_method=DELETE"><button>Delete</button></form>
+            </div>
+            <br>
+            <% } %>
+    </div>
+    <form method="GET" action="/post/new">
+        <button>Add new Post</button>
+    </form>
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pack{
+        width:100%;
+        height:100px;
+        background-color: aliceblue;
+        display: flex;
+        justify-content: center;
+     align-items: center;
+     flex-direction: column;
+     margin:10px 10px 10px 10px;
+    }
+</style>
+<body>
+    <h1>This is Home.ejs</h1>
+    <% for(let item of data) {%>
+<div class="pack">
+        <h2><%= item.name%></h2>
+        <h2><%= item.age%></h2>
+    </div>
+    <form method="GET" action="/see/<%=item.age%>">
+        <button >See More</button>
+    </form>
+
+    <form method="GET" action="/see/<%=item.age%>/edit">
+        <button >Edit</button>
+    </form>
+
+    <form method="GET" action="/see/<%=item.age%>">
+        <button >Delete Button</button>
+    </form>
+
+ 
+        <%}%>
+   
+</body>
+</html>
